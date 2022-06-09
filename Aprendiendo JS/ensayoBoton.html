@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div>
+
+        <h1>Planes bogota</h1>
+        <p>Chorro de quevedo</p>
+        <p>Precio estimado: $25.000</p>
+
+        <button type="button" class="btnAgregarChorro"> Agregar al plan</button>
+
+        <h1>Restaurantes del chorro</h1>
+        <h2>Don quevedo</h2>
+        <p>Combo bueno y barato</p>
+        <ul>
+            <ul>-Hamburguesa
+                <li>precio unitario: $15.000</li>
+            </ul>
+            <ul>-Gaseosa
+                <li>precio unitario: $5.000</li>
+            </ul>
+        </ul>
+        <p>Precio estimado: $20.000</p>
+
+        <button type="button" class="btnAgregarResChorro"> Agregar al plan</button>
+
+    </div>
+    <br><br><br>
+    <div>
+        <button type="button" class="total">Calcular total del plan</button>
+    </div>
+
+    <div class="totalDiv">
+
+    </div>
+</body>
+<script>
+    let ChorroQuevedo = 25000;
+    let ChorroQuevedoComida = 20000;
+    let sum = 0;
+
+    function AgregarAlPlan() {
+        let boton = document.querySelector(".btnAgregarChorro");
+        boton.addEventListener("click", Sumar);
+
+
+    }
+
+    function AgregarAlPlan2() {
+        let boton2 = document.querySelector(".btnAgregarResChorro");
+        boton2.addEventListener("click", Sumar);
+
+    }
+
+    function Sumar() {
+
+        if (AgregarAlPlan) {
+            sum = ChorroQuevedo;
+        } else if (AgregarAlPlan2) {
+            sum = ChorroQuevedoComida;
+        } else {
+            sum = ChorroQuevedo + ChorroQuevedoComida;
+
+        }
+
+    }
+
+    function CalcularTotalPlan() {
+
+        let CalcularTotal = document.querySelector(".total");
+        CalcularTotal.addEventListener("click", Calcular);
+    }
+
+    function Calcular() {
+        let ContenedorTotal = document.querySelector(".totalDiv");
+        ContenedorTotal.innerHTML = "$" + sum;
+    }
+    AgregarAlPlan2();
+    AgregarAlPlan();
+    CalcularTotalPlan();
+</script>
+
+</html>

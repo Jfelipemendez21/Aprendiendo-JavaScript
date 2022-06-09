@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="materia">
+        <div class="materia">
+            <div class="nombre">Fisica 1</div>
+            <div class="nota">2</div>
+        </div>
+    </div>
+    <script>
+        const materiasHTML = document.querySelector(".materia");
+        const materias = [{
+                nombre: "Fisica 1",
+                nota: 7
+            },
+            {
+                nombre: "Calculo 1",
+                nota: 3
+            },
+            {
+                nombre: "Algebra 2",
+                nota: 6
+            },
+            {
+                nombre: "Programacion 4",
+                nota: 8
+            },
+            {
+                nombre: "Bases de datos 3",
+                nota: 4
+            }
+
+        ]
+
+        const obtenerMateria = (id) => {
+            return new Promise((res, rej) => {
+                materia = materias[id];
+                if (materia == undefined) {
+                    rej("error, la materia no existe");
+                } else {
+                    setTimeout(() => {
+                        res(materia)
+                    }, Math.random() * 400);
+                }
+            })
+        }
+        
+        const devolverMaterias = async () => {
+            let materia = []
+            for (let i = 0; i < materias.length; i++) {
+                materia[i] = await obtenerMateria(i);
+                console.log(materia[i]);
+                let newHTMLCode = 
+    `<div class="materia">
+        <div class="materia">
+            <div class="nombre">${materia[i].nombre}</div>
+            <div class="nota">${materia[i].nota}</div>
+        </div>
+    </div>`
+    materiasHTML.innerHTML = newHTMLCode;
+            }
+        }
+
+        devolverMaterias();
+    </script>
+</body>
+
+</html>

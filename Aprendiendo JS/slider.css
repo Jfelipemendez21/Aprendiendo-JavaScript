@@ -1,0 +1,174 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.container {
+    width: 90px;
+    min-width: 100vh;
+    max-width: 1200px;
+    margin: 0 auto;
+    overflow: hidden;
+
+}
+
+.slider {
+    background-color: #f2f2f2;
+    padding: 40px 0;
+}
+
+.slider_container {
+    display: grid;
+    grid-template-columns: 50px 1fr 50px;
+    align-items: center;
+    gap: 1em;
+}
+
+.slider_body {
+
+    grid-column: 2/3;
+    grid-row: 1/2;
+    opacity: 0;
+    pointer-events: none;
+    display: grid;
+    background-color: #f2f2f2;
+    grid-template-columns: 1fr max-content;
+    align-items: center;
+    transition: opacity 1.5s;
+
+
+}
+
+.slider_body--show {
+
+    opacity: 1;
+    pointer-events: unset;
+
+}
+
+.slider_txt {
+    max-width: 600px;
+
+}
+
+.subtitle {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+
+}
+
+.slider_reviw {
+    font-weight: 300;
+    font-size: 20px;
+    line-height: 1.7;
+}
+
+
+.slider_img {
+    width: 230px;
+    height: 230px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+}
+
+.slider_arrow {
+    cursor: pointer;
+    width: 50px;
+}
+
+.slider_arrow:nth-of-type(2) {
+    justify-self: end;
+}
+
+header {
+
+    font-family: sans-serif;
+    width: 100%;
+    background: blueviolet;
+}
+
+#btn_menu {
+    display: none;
+}
+
+header label {
+    display: none;
+    width: 50px;
+    height: 50px;
+    border-right: 1px solid #fff;
+
+}
+
+header label img {
+    padding: 10%;
+
+
+}
+
+header label:hover {
+    cursor: pointer;
+    background: rgb(107, 29, 179);
+}
+
+.menu ul {
+    margin: 0;
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+.menu li:hover{
+ background:rgb(107, 29, 179) ;
+
+}
+
+.menu li a{
+   display: block;
+   padding: 15px 20px;
+   color: white;
+   text-decoration: none;
+}
+
+.menu li{
+   border-left: 1px  solid #fff ;
+
+}
+
+@media (max-width:768px) {
+       header label{
+        display: block;
+       } 
+       .menu{
+           position:absolute;
+           background-color: blueviolet;
+           margin-left: -70%;
+           transition: 1s;
+
+       }
+
+       .menu ul{
+            flex-direction: column;
+            
+       }
+       .menu li{
+        border-left: none;
+        border-top: 1px solid #fff;
+
+       }
+       #btn_menu:checked ~ .menu{
+           margin: 0;
+
+
+       }
+
+    
+
+    }

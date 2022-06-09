@@ -1,0 +1,15 @@
+.contenedor1{
+    padding: 100px;
+    background:red ;
+}
+.contenedor2{
+    padding: 50px;
+    background:blue ;
+}
+.seleccionado{
+    margin-top: 20px;
+    color: red;
+    border: 1px solid red;
+    font-size: 30px;
+    width: 200px;
+}

@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        async function traerPais() {
+            const respuesta = await fetch("https://api.nationalize.io/?name=felipe");
+
+            if(!respuesta.ok){
+            let opps= ("404 no encontre ni mierdaa");
+            alert(opps);
+            throw new Error(opps);
+            }
+
+            const nombre = respuesta.json();
+
+            return nombre;
+
+        }
+
+        function monstrarNombre(n) {
+            document.getElementById("mensaje").innerHTML = n.country[0].country_id;
+        }
+
+        traerPais().then(monstrarNombre);
+
+
+    </script>
+
+    <p id="mensaje">Cargando...</p>
+</body>
+
+</html>

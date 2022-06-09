@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="eventos.css">
+    <title>Eventos</title>
+</head>
+<body>
+    <div class="contenedor1">
+        <div class="contenedor2">
+            <button class="btn">apretame</button>
+            <input type="text" class="input-prueba">
+        </div>
+    </div>
+    <div class="seleccionado">
+
+    </div>
+    <h1>Con cursor</h1>
+    <script>
+        // const button= document.querySelector(".btn");
+        // button.onclick= ()=>{
+
+        //     alert("holaaaa");
+        // }
+        // -----------------------------------------------------------------------------
+        // const button= document.querySelector(".btn"); 
+        // button.addEventListener("click", saludar);
+
+        // function saludar(){
+        // alert("Epaaaa");
+        // button.removeEventListener("click",saludar);
+        // }
+         // -----------------------------------------------------------------------------
+        //  const button= document.querySelector(".btn"); 
+        //  const contenedor1= document.querySelector(".contenedor1"); 
+        //  const contenedor2= document.querySelector(".contenedor2"); 
+
+        //  contenedor1.addEventListener("click", (e)=>{
+        //      alert("di click en el contenedor rojo");
+        //  },true);
+        //  contenedor2.addEventListener("click", (e)=>{
+        //      alert("di click en el contenedor azul");
+        //     //  e.stopPropagation();
+        //  },true);
+        //  button.addEventListener("click", (e)=>{
+        //      alert("di click en el boton");
+        //  });
+          // -----------------------------------------------------------------------------
+        //  const button= document.querySelector(".btn"); 
+        //  const contenedor1= document.querySelector(".contenedor1"); 
+        //  const contenedor2= document.querySelector(".contenedor2"); 
+
+        //  button.addEventListener("dbclick",(e)=>{
+        //      alert("di click dos veces");
+        //  });
+          // -----------------------------------------------------------------------------
+        // este se usa cuando el puntero pase por el elemento especificado
+        //  const button= document.querySelector(".btn");
+        //  const contenedor1= document.querySelector(".contenedor1"); 
+        //  const contenedor2= document.querySelector(".contenedor2");  
+         
+        //  button.addEventListener("mouseover",(e)=>{
+        //      alert("eooooo");
+        //  }); 
+        //  contenedor1.addEventListener("mouseover",(e)=>{
+        //      alert("eooooo");
+        //  }); 
+        //  contenedor2.addEventListener("mouseover",(e)=>{
+        //      alert("eooooo");
+        //  }); 
+         // -----------------------------------------------------------------------------
+        //  este se usa para cuando el cursor salga del elemento especificado
+        // const button= document.querySelector(".btn");
+        //  const contenedor2= document.querySelector(".contenedor2"); 
+           
+         
+        //  button.addEventListener("mouseout",(e)=>{
+        //      alert("eooooo");
+        //  }); 
+        //  contenedor2.addEventListener("mouseout",(e)=>{
+        //      alert("eooooo");
+        //  }); 
+          // -----------------------------------------------------------------------------
+         //  este se usa para cuando demos click derecho en el elemento especificado
+        // const contenedor1= document.querySelector(".contenedor1"); 
+           
+        //  contenedor1.addEventListener("contextmenu",(e)=>{
+        //      alert("ey, quisiste desplegar el menu");
+        //  }); 
+
+        // -----------------------------------------------------------------------------
+        // mouseenter: se usa cuando el puntero se mueve sobre un elemento
+        // mousemove: se usa cuando el puntero se mueve mientras esta sobre un lemento
+        // mouseleave: se usa cuando el puntero se mueve fuera de un elemento 
+        // mousedown: se usa cuando se da un click y se arrastra el puntero dentro del elemento
+        // mouseup: se usa cuando se da un click y se arrastra el puntero fuera del elemento    
+           
+    
+   </script>
+   <h1>Con teclado</h1>
+   <script>
+    // -----------------------------------------------------------------------------
+        //  keypress: este se usa para cuando se presiona alguna tecla
+        //  keyup: se usa cuando una tecla deja de ser presionada
+        // onkeys: se usa despues de que dos eventos anteriores hayan concluido consecutivamente
+        //  const input= document.querySelector(".input-prueba"); 
+        //  input.addEventListener("keyup",(e)=>{
+        //   alert("ey, quisiste desplegar el menu");
+        //  }); 
+
+   </script>
+   <h1>Error y carga</h1>
+   <script>
+// para que me de error cuando la pagina no cargue correctamente
+//     document.body.addEventListener("error",()=>{
+//         console.log("Ha sucedido un error");
+//     });
+ 
+// // para que me de aviso cuando la pagina cargue correctamente 
+//      window.addEventListener("load", ()=>{
+//          console.log("Ha cargado el sitio");
+//      })
+
+   </script>
+   <h1>Otros</h1>
+   <script>
+    //  resize: se usa cuando se cambia de tamaño de la vista del documento
+    //  scroll: ocurre cuando se desplaza la barra de desplazamiento de un elemento
+    //  select: ocurre despues de que el ususario selecciona algun texto de <input> 
+    // window.addEventListener("resize",()=>{
+    //     console.log("Se ha actualizado la resolucion");
+    // });
+    const input= document.querySelector(".input-prueba");
+    const contenedor= document.querySelector(".seleccionado");
+    input.addEventListener("select",(e)=>{
+            let start = e.target.selectionStart;
+            let end= e.target.selectionEnd; 
+            let textoCompleto= input.value;
+            contenedor.innerHTML= textoCompleto.substring(start,end);
+            // el .target se utiliza para saber el objeto en el que se desencadeno el evento
+            // el parametro "e" es el evento que se ejecuta y todas sus propiedades 
+   });
+
+   </script>
+   
+</body>
+</html>
